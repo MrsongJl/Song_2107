@@ -93,6 +93,7 @@
     <Content Include="Assets\Js\template-native-debug.js" />
     <Content Include="Assets\Js\template-native.js" />
     <Content Include="Assets\Js\template.js" />
+    <Content Include="ReadMe.txt" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -119,6 +120,12 @@
     <Folder Include="Assets\Images\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Song_Single\Song_Single.csproj">
+      <Project>{29e0d649-2c53-462f-8bac-50ed155e1bdc}</Project>
+      <Name>Song_Single</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

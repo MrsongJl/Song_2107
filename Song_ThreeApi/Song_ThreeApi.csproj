@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{29E0D649-2C53-462F-8BAC-50ED155E1BDC}</ProjectGuid>
+    <ProjectGuid>{C4E6D15F-F2A5-4FD8-9E91-D0B10FFBB85D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Song_Single</RootNamespace>
-    <AssemblyName>Song_Single</AssemblyName>
+    <RootNamespace>Song_ThreeApi</RootNamespace>
+    <AssemblyName>Song_ThreeApi</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Song\packages\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis">
+      <HintPath>..\packages\StackExchange.Redis.1.2.1\lib\net45\StackExchange.Redis.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,16 +48,10 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Redis.Helper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Song_Models\Song_Models.csproj">
-      <Project>{a1f498da-5ec7-4f34-b029-f77459983c89}</Project>
-      <Name>Song_Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Song_ThreeApi\Song_ThreeApi.csproj">
-      <Project>{c4e6d15f-f2a5-4fd8-9e91-d0b10ffbb85d}</Project>
-      <Name>Song_ThreeApi</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
