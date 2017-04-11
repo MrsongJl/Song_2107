@@ -54,6 +54,7 @@
     <Compile Include="AdminUser.cs">
       <DependentUpon>SongEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="Enum\EnumList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SongEntity.Context.cs">
       <AutoGen>True</AutoGen>
