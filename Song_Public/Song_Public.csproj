@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -54,8 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackupsHelper.cs" />
+    <Compile Include="CacheHelper.cs" />
     <Compile Include="HttpHelper.cs" />
+    <Compile Include="ImageCode.cs" />
     <Compile Include="Log4netProvider.cs" />
+    <Compile Include="Md5Helper.cs" />
     <Compile Include="RandomStr.cs" />
     <Compile Include="TimerAttribute.cs" />
     <Compile Include="EFHelpler.cs" />
