@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Song_Web", "Song_Web\Song_W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Song_Single", "Song_Single\Song_Single.csproj", "{29E0D649-2C53-462F-8BAC-50ED155E1BDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Song_ThreeApi", "Song_ThreeApi\Song_ThreeApi.csproj", "{C4E6D15F-F2A5-4FD8-9E91-D0B10FFBB85D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Third_party", "Song_ThreeApi\Third_party.csproj", "{C4E6D15F-F2A5-4FD8-9E91-D0B10FFBB85D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

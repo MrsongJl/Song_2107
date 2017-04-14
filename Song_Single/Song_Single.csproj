@@ -48,9 +48,9 @@
       <Project>{a1f498da-5ec7-4f34-b029-f77459983c89}</Project>
       <Name>Song_Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Song_ThreeApi\Song_ThreeApi.csproj">
+    <ProjectReference Include="..\Song_ThreeApi\Third_party.csproj">
       <Project>{c4e6d15f-f2a5-4fd8-9e91-d0b10ffbb85d}</Project>
-      <Name>Song_ThreeApi</Name>
+      <Name>Third_party</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
