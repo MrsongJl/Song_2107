@@ -76,13 +76,17 @@ namespace Song_Public
                 //收到文件
                 try
                 {
-                //    var mappath = System.Web.HttpContext.Current.Server.MapPath(path);
-                    var Indexes = HttpContext.Current.Request.Files.AllKeys.ToList().IndexOf(key);
-                    if (Indexes != -1) {
-                        var oldfile = HttpContext.Current.Request.Files[Indexes];
-                        return oldfile;
-                    }
-                    return null;
+                    //    var mappath = System.Web.HttpContext.Current.Server.MapPath(path);
+                    //方式1
+                    //var Indexes = HttpContext.Current.Request.Files.AllKeys.ToList().IndexOf(key);
+                    //if (Indexes != -1) {
+                    //    var oldfile = HttpContext.Current.Request.Files[Indexes];
+                    //    return oldfile;
+                    //}
+                    //方式二
+                    var oldfile = HttpContext.Current.Request.Files.Get(key);
+                    return oldfile;
+                    //  return null;
                     //   oldfile.SaveAs(mappath);
                 }
                 catch (Exception e)
@@ -91,7 +95,7 @@ namespace Song_Public
                     return HttpContext.Current.Request.Files[0];
                 }
 
-               
+
             }
             return null;
         }

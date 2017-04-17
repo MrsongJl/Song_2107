@@ -17,22 +17,22 @@ namespace Song_Web
             //定时任务处理 
             //调用实例 [AutoTask(EnterMethod = "StartTask", IntervalSeconds = 600, StartTime = "2016-12-28 10:45:00")]
             //调用说明
-            //AutoTaskAttribute.RegisterTask();
+            AutoTaskAttribute.RegisterTask();
         }
         /// <summary>
         /// 测试任务，每10分钟执行一次
         /// </summary>
-        //[AutoTask(EnterMethod = "StartTask", IntervalSeconds = 600, StartTime = "2016-12-28 10:45:00")]
-        //public class TestTask
-        //{
-        //    /// <summary>
-        //    ////// </summary>
-        //    public static void StartTask()
-        //    {
-        //        LogHelper.Info("定时任务启动成功！");
-        //        LogHelper.Info("定时任务执行完毕！");
-        //    }
-        //}
+        [AutoTask(EnterMethod = "StartTask", IntervalSeconds = 600, StartTime = "2017-04-17 13:06:00")]
+        public class TestTask
+        {
+            /// <summary>
+            ////// </summary>
+            public static void StartTask()
+            {
+                HttpHelper a = new HttpHelper();
+                a.GetWebRequest("http://localhost:3829/");
+            }
+        }
 
     }
 }

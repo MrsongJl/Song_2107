@@ -18,6 +18,18 @@ namespace Song_Public
         {
             return JsonConvert.DeserializeObject<T>(JsonStr);
         }
+        /// <summary>
+        /// 去掉转义字符
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public string jsonString(string str)
+        {
+            str = str.Replace("\\", "\\\\");
+            str = str.Replace("/", "\\/");
+            str = str.Replace("'", "\\'");
+            return str;
+        }
 
     }
 }
