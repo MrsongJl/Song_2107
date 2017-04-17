@@ -12,23 +12,22 @@ namespace Song_Models
     using System;
     using System.Collections.Generic;
     
-    public partial class AdminUser
+    public partial class ActionPermission
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public AdminUser()
+        public ActionPermission()
         {
-            this.RoleUser = new HashSet<RoleUser>();
+            this.ActionPermissionRole = new HashSet<ActionPermissionRole>();
         }
     
         public int Id { get; set; }
-        public string Account { get; set; }
-        public string RealName { get; set; }
-        public string Password { get; set; }
+        public string ActionName { get; set; }
+        public string ControllerName { get; set; }
+        public string Description { get; set; }
         public System.DateTime CreateTime { get; set; }
         public bool IsAbort { get; set; }
-        public bool IsSuperMan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RoleUser> RoleUser { get; set; }
+        public virtual ICollection<ActionPermissionRole> ActionPermissionRole { get; set; }
     }
 }

@@ -25,7 +25,12 @@ namespace Song_Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<ActionPermission> ActionPermission { get; set; }
+        public virtual DbSet<ActionPermissionRole> ActionPermissionRole { get; set; }
         public virtual DbSet<AdminUser> AdminUser { get; set; }
+        public virtual DbSet<MenuPermission> MenuPermission { get; set; }
+        public virtual DbSet<MenuPermissionRole> MenuPermissionRole { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<RoleUser> RoleUser { get; set; }
     }
 }

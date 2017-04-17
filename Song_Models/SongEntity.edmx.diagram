@@ -5,8 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d893b0f07ce147be9198af318af7df33" Name="Diagram1">
-        <EntityTypeShape EntityType="Song_2017Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Song_2017Model.AdminUser" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Song_2017Model.ActionPermission" Width="1.5" PointX="0.75" PointY="9" />
+        <EntityTypeShape EntityType="Song_2017Model.ActionPermissionRole" Width="1.5" PointX="3" PointY="2" />
+        <EntityTypeShape EntityType="Song_2017Model.AdminUser" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Song_2017Model.MenuPermission" Width="1.5" PointX="0.75" PointY="13" />
+        <EntityTypeShape EntityType="Song_2017Model.MenuPermissionRole" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="Song_2017Model.Role" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="Song_2017Model.RoleUser" Width="1.5" PointX="3" PointY="8" />
+        <AssociationConnector Association="Song_2017Model.FK_ActionPermissionRole_ActionPermission" />
+        <AssociationConnector Association="Song_2017Model.FK_ActionPermissionRole_Role" />
+        <AssociationConnector Association="Song_2017Model.FK_RoleUser_User" />
+        <AssociationConnector Association="Song_2017Model.FK_MenuPermissionRole_MenuPermission" />
+        <AssociationConnector Association="Song_2017Model.FK_MenuPermissionRole_Role" />
+        <AssociationConnector Association="Song_2017Model.FK_RoleUser_Role" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

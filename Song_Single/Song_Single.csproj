@@ -30,8 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,13 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BaseSingle.cs" />
+    <Compile Include="FilterSingle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Song_Models\Song_Models.csproj">
       <Project>{a1f498da-5ec7-4f34-b029-f77459983c89}</Project>
       <Name>Song_Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Song_Public\Song_Public.csproj">
+      <Project>{02E5C15A-894C-44D6-94D9-9ABDFEC4E126}</Project>
+      <Name>Song_Public</Name>
     </ProjectReference>
     <ProjectReference Include="..\Song_ThreeApi\Third_party.csproj">
       <Project>{c4e6d15f-f2a5-4fd8-9e91-d0b10ffbb85d}</Project>

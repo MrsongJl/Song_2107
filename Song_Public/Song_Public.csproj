@@ -46,6 +46,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,7 @@
   <ItemGroup>
     <Compile Include="BackupsHelper.cs" />
     <Compile Include="CacheHelper.cs" />
+    <Compile Include="CookieHelper.cs" />
     <Compile Include="GetIpHelper.cs" />
     <Compile Include="HtmlFilter.cs" />
     <Compile Include="HttpHelper.cs" />
@@ -63,12 +65,14 @@
     <Compile Include="IsNullHelper.cs" />
     <Compile Include="Log4netProvider.cs" />
     <Compile Include="Md5Helper.cs" />
+    <Compile Include="MenuHelper.cs" />
     <Compile Include="QueryHelper.cs" />
     <Compile Include="RandomStr.cs" />
     <Compile Include="TimerAttribute.cs" />
     <Compile Include="EFHelpler.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToTypeHelper.cs" />
     <Compile Include="UploadHelper.cs" />
   </ItemGroup>
   <ItemGroup>
