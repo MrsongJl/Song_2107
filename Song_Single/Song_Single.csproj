@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseSingle.cs" />
+    <Compile Include="EFHelpler.cs" />
     <Compile Include="FilterSingle.cs" />
+    <Compile Include="MenuHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

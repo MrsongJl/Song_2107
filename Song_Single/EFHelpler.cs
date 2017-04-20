@@ -8,7 +8,7 @@ using System.Data.Entity;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Song_Public
+namespace Song_Single
 {
 
     /// <summary>

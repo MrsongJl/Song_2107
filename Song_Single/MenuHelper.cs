@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Song_Public
+namespace Song_Single
 {
    public class MenuHelper : Controller
     {
