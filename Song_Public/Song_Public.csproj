@@ -57,7 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlertHelper.cs" />
     <Compile Include="BackupsHelper.cs" />
     <Compile Include="CacheHelper.cs" />
     <Compile Include="CookieHelper.cs" />
