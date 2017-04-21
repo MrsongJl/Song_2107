@@ -11,7 +11,7 @@ namespace Song_Web.Controllers
     public class HomeController : Song_Single.BaseSingle
     {
         // GET: Home
-        [AdminPower(IsNeedLogin = true)]
+        //[AdminPower(IsNeedLogin = true)]
         [Description("后台首页")]
         public ActionResult Index()
         {

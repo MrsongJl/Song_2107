@@ -53,7 +53,10 @@
 #50）cookie的封装
 #51）类型的处理   
 #52）登录后回到登录前的页面处理  
-53）弹框使用 layer
+#53）弹框使用 layer 
+#54）图片上传webuploader 富文本使用常见的ue... kindedit 
+*55)baguettebox js 查看图片插件 兼容 APP 纯js  pc使用 lightbox2
+
 
 
 
