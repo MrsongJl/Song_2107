@@ -90,6 +90,12 @@
       <DependentUpon>SongEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="GetModel.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>SongEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <DependentUpon>SongEntity.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

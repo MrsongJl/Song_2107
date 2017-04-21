@@ -56,7 +56,7 @@
 #53）弹框使用 layer 
 #54）图片上传webuploader 富文本使用常见的ue... kindedit 
 *55)baguettebox js 查看图片插件 兼容 APP 纯js  pc使用 lightbox2
-
+56）用SqlBulkCopy来处理大数量的存储数据  导入到数据库功能  万条以上的处理 以下的使用使用EF的EntityFramework.Extended 插件
 
 
 

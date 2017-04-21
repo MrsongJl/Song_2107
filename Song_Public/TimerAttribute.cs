@@ -8,8 +8,8 @@ using System.Web;
 namespace Song_Public
 {
     /// <summary>
-    /// 定时Task
-    /// 暂时以Task
+    /// 定时Task 任务设定需要在同一个dll中 否则会找不到
+    /// 暂时以Task形式
     /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
     public class AutoTaskAttribute : Attribute
@@ -96,5 +96,21 @@ namespace Song_Public
             }
         }
 
+
+
+    }
+    /// <summary>
+    /// 测试任务，每10分钟执行一次 任务设定需要在同一个dll中 否则会找不到
+    /// </summary>
+    [AutoTask(EnterMethod = "StartTask", IntervalSeconds = 600, StartTime = "2017-04-21 16:54:00")]
+    public class TestTask
+    {
+        /// <summary>
+        ////// </summary>
+        public static void StartTask()
+        {
+            HttpHelper a = new HttpHelper();
+            a.GetWebRequest("http://localhost:3829/");
+        }
     }
 }

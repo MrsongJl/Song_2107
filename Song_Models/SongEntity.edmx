@@ -84,6 +84,26 @@
           <Property Name="RoleId" Type="int" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sex" Type="int" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="nowGroup" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <Association Name="FK_ActionPermissionRole_ActionPermission">
           <End Role="ActionPermission" Type="Self.ActionPermission" Multiplicity="1" />
           <End Role="ActionPermissionRole" Type="Self.ActionPermissionRole" Multiplicity="*" />
@@ -164,6 +184,8 @@
           <EntitySet Name="MenuPermissionRole" EntityType="Self.MenuPermissionRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RoleUser" EntityType="Self.RoleUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ActionPermissionRole_ActionPermission" Association="Self.FK_ActionPermissionRole_ActionPermission">
             <End Role="ActionPermission" EntitySet="ActionPermission" />
             <End Role="ActionPermissionRole" EntitySet="ActionPermissionRole" />
@@ -201,6 +223,8 @@
           <EntitySet Name="MenuPermissionRole" EntityType="Song_2017Model.MenuPermissionRole" />
           <EntitySet Name="Role" EntityType="Song_2017Model.Role" />
           <EntitySet Name="RoleUser" EntityType="Song_2017Model.RoleUser" />
+          <EntitySet Name="sysdiagrams" EntityType="Song_2017Model.sysdiagrams" />
+          <EntitySet Name="Test" EntityType="Song_2017Model.Test" />
           <AssociationSet Name="FK_ActionPermissionRole_ActionPermission" Association="Song_2017Model.FK_ActionPermissionRole_ActionPermission">
             <End Role="ActionPermission" EntitySet="ActionPermission" />
             <End Role="ActionPermissionRole" EntitySet="ActionPermissionRole" />
@@ -317,6 +341,26 @@
           <NavigationProperty Name="AdminUser" Relationship="Song_2017Model.FK_RoleUser_User" FromRole="RoleUser" ToRole="AdminUser" />
           <NavigationProperty Name="Role" Relationship="Song_2017Model.FK_RoleUser_Role" FromRole="RoleUser" ToRole="Role" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="Int32" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="nowGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
         <Association Name="FK_ActionPermissionRole_ActionPermission">
           <End Type="Song_2017Model.ActionPermission" Role="ActionPermission" Multiplicity="1" />
           <End Type="Song_2017Model.ActionPermissionRole" Role="ActionPermissionRole" Multiplicity="*" />
@@ -389,7 +433,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -477,6 +521,28 @@
               <MappingFragment StoreEntitySet="RoleUser">
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Song_2017Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Test">
+            <EntityTypeMapping TypeName="Song_2017Model.Test">
+              <MappingFragment StoreEntitySet="Test">
+                <ScalarProperty Name="nowGroup" ColumnName="nowGroup" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

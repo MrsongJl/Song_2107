@@ -32,5 +32,7 @@ namespace Song_Models
         public virtual DbSet<MenuPermissionRole> MenuPermissionRole { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<RoleUser> RoleUser { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Test> Test { get; set; }
     }
 }

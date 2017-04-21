@@ -59,6 +59,7 @@
     <Compile Include="BackupsHelper.cs" />
     <Compile Include="CacheHelper.cs" />
     <Compile Include="CookieHelper.cs" />
+    <Compile Include="CopyTable.cs" />
     <Compile Include="EmailHelper.cs" />
     <Compile Include="GetIpHelper.cs" />
     <Compile Include="HtmlFilter.cs" />

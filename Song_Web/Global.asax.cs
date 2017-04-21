@@ -19,20 +19,7 @@ namespace Song_Web
             //调用说明
             AutoTaskAttribute.RegisterTask();
         }
-        /// <summary>
-        /// 测试任务，每10分钟执行一次
-        /// </summary>
-        [AutoTask(EnterMethod = "StartTask", IntervalSeconds = 600, StartTime = "2017-04-17 13:06:00")]
-        public class TestTask
-        {
-            /// <summary>
-            ////// </summary>
-            public static void StartTask()
-            {
-                HttpHelper a = new HttpHelper();
-                a.GetWebRequest("http://localhost:3829/");
-            }
-        }
+
 
     }
 }
