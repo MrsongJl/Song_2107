@@ -11,8 +11,9 @@ namespace Song_Single
     /// 菜单权限入口中间件
     /// </summary>
     public class BaseSingle: MenuHelper
-    {
-        //可以在期中书写逻辑代码实现解偶
+    {   //可以在期中书写逻辑代码实现解偶
+ 
+     
     }
     
 }

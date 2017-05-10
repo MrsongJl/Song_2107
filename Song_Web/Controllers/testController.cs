@@ -8,7 +8,7 @@ using Song_Public;
 
 namespace Song_Web.Controllers
 {
-    public class testController : Controller
+    public class testsController : Controller
     {
         // GET: test
         public ActionResult Index()

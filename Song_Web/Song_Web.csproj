@@ -372,6 +372,8 @@
     <Content Include="Areas\domain\Views\Home\Index.cshtml" />
     <Content Include="Areas\domain\Assets\docs\.DS_Store" />
     <Content Include="Areas\domain\Views\Index\Index.cshtml" />
+    <Content Include="Areas\domain\Views\Test\Index.cshtml" />
+    <Content Include="Areas\domain\Views\Shared\RanderJs.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -382,6 +384,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\domain\Controllers\HomeController.cs" />
     <Compile Include="Areas\domain\Controllers\IndexController.cs" />
+    <Compile Include="Areas\domain\Controllers\TestController.cs" />
     <Compile Include="Areas\domain\domainAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\testController.cs" />
@@ -417,6 +420,10 @@
     <Folder Include="Views\test\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Song_Models\Song_Models.csproj">
+      <Project>{A1F498DA-5EC7-4F34-B029-F77459983C89}</Project>
+      <Name>Song_Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Song_Public\Song_Public.csproj">
       <Project>{02e5c15a-894c-44d6-94d9-9abdfec4e126}</Project>
       <Name>Song_Public</Name>

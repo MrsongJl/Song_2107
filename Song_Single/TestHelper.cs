@@ -10,6 +10,11 @@ using System.Threading.Tasks;
 
 namespace Song_Single
 {
+    /// <summary>
+    /// 采用一种直连数据库操作 
+    /// 使用实例 TestHelper t = new Song_Single.TestHelper();
+    /// t.start();
+    /// </summary>
     public class TestHelper
     {
         // public static string str = "metadata=res://*/SongEntity.csdl|res://*/SongEntity.ssdl|res://*/SongEntity.msl;provider=System.Data.SqlClient;provider connection string=\"data source =.; initial catalog = Song_2017; integrated security = True; MultipleActiveResultSets=True;App=EntityFramework";//数据库链接串
@@ -47,7 +52,7 @@ namespace Song_Single
                 for (int i = 0; i < 1000000; i++)
                 {
                     DataRow dr = dt.NewRow(); //行
-                    dr["Name"] = i.ToString();
+                    dr["Name"] = "姓名"+i.ToString();
                     dr["Sex"] = i;
                     dr["Age"] = i;
                     dr["nowGroup"] = i.ToString();
