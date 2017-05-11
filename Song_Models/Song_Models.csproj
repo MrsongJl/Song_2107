@@ -61,6 +61,7 @@
       <DependentUpon>SongEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Enum\EnumList.cs" />
+    <Compile Include="GetModel.cs" />
     <Compile Include="MenuPermission.cs">
       <DependentUpon>SongEntity.tt</DependentUpon>
     </Compile>
@@ -89,7 +90,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SongEntity.edmx</DependentUpon>
     </Compile>
-    <Compile Include="GetModel.cs" />
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>SongEntity.tt</DependentUpon>
     </Compile>

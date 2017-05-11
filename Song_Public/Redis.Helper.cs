@@ -107,6 +107,7 @@ public class RedisHelper
 
     /// <summary>
     /// 保存一个集合
+    /// 使用方式   RedisHelper.HashSet<Test>("Test", a, get);      public string get(Test a){  return "ok";}
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="key">Redis Key</param>

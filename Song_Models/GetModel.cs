@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Song_Models
 {
+    /// <summary>
+    /// 后期加入缓存使用
+    /// </summary>
 
     public class GetModel
     {

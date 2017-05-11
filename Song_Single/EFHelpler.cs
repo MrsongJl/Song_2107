@@ -16,25 +16,26 @@ namespace Song_Single
     /// </summary>
     class EFHelpler<T> where T : class
     {
+       Song_2017Entities  m = new Song_2017Entities();
 
         /// <summary>
         /// 实体新增 EFHelpler<User> helper = new EFHelpler<User>(); helper.add(Userlist.ToArray());
         /// </summary>
         /// <param name="model"></param>
-        public void add(params T[] paramList)
+        public  void add(params T[] paramList)
         {
             foreach (var model in paramList)
             {
-                GetModel.DB.Entry<T>(model).State = EntityState.Added;
+                m.Entry<T>(model).State = EntityState.Added;
             }
-            GetModel.DB.SaveChanges();
+            m.SaveChanges();
         }
         /// <summary>
         /// 实体查询 var query = helper.getSearchList(item => item.UserName.Contains("keso"));
         /// </summary>
-        public IEnumerable<T> getSearchList(Expression<Func<T, bool>> where)
+        public  IEnumerable<T> getSearchList(Expression<Func<T, bool>> where)
         {
-            return GetModel.DB.Set<T>().Where(where);
+            return m.Set<T>().Where(where);
         }
         /// <summary>
         /// 实体分页查询 var queryMulti = helper.getSearchListByPage<int>(item => item.UserName.Contains("FlyElehant"), order => order.PersonID, 2, 1);
@@ -45,30 +46,30 @@ namespace Song_Single
         /// <param name="pageSize"></param>
         /// <param name="pageIndex"></param>
         /// <returns></returns>
-        public IEnumerable<T> getSearchListByPage<TKey>(Expression<Func<T, bool>> where, Expression<Func<T, TKey>> orderBy, int pageSize, int pageIndex)
+        public  IEnumerable<T> getSearchListByPage<TKey>(Expression<Func<T, bool>> where, Expression<Func<T, TKey>> orderBy, int pageSize, int pageIndex)
         {
-            return GetModel.DB.Set<T>().Where(where).OrderByDescending(orderBy).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            return m.Set<T>().Where(where).OrderByDescending(orderBy).Skip((pageIndex - 1) * pageSize).Take(pageSize);
         }
         /// <summary>
         /// 实体删除 helper.getSearchList(item => item.UserName.Contains("keso"));helper.delete(query.ToArray());
         /// </summary>
         /// <param name="model"></param>
-        public void delete(params T[] paramList)
+        public  void delete(params T[] paramList)
         {
             foreach (var model in paramList)
             {
-                GetModel.DB.Entry<T>(model).State = EntityState.Deleted;
+                m.Entry<T>(model).State = EntityState.Deleted;
             }
-            GetModel.DB.SaveChanges();
+            m.SaveChanges();
         }
         /// <summary>
         /// 按照条件修改数据 Dictionary<string,object> dic=new Dictionary<string,object>();dic.Add("PersonID",2); dic.Add("UserName","keso");helper.update(item => item.UserName.Contains("keso"), dic);
         /// </summary>
         /// <param name="where"></param>
         /// <param name="dic"></param>
-        public void update(Expression<Func<T, bool>> where, Dictionary<string, object> dic)
+        public  void update(Expression<Func<T, bool>> where, Dictionary<string, object> dic)
         {
-            IEnumerable<T> result = GetModel.DB.Set<T>().Where(where).ToList(); //找到修改的数据列表【原数据】
+            IEnumerable<T> result = m.Set<T>().Where(where).ToList(); //找到修改的数据列表【原数据】
             Type type = typeof(T); //找到数据对象类型
             List<PropertyInfo> propertyList = type.GetProperties(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance).ToList(); //利用反射 修改赋值对象集合【新数据】
             //遍历结果集 并对比相同列进行赋值
@@ -84,8 +85,10 @@ namespace Song_Single
                     }
                 }
             }
-            GetModel.DB.SaveChanges();
+
+            m.SaveChanges();
         }
+
 
         /// <summary>
         /// 分页拓展 json
@@ -147,5 +150,48 @@ namespace Song_Single
         //    };
         //    return json;
         //}
+
+        /// <summary>
+        /// 添加实体
+        /// </summary>
+        /// <param name="entity"></param>
+        public  void Add(T entity)
+        {
+            m.Set<T>().Add(entity);
+            m.SaveChanges();
+        }
+        private  object obj = new object();
+        /// <summary>
+        /// 改变实体
+        /// </summary>
+        /// <param name="entity"></param>
+        public  void Change(T entity)
+        {
+            m.Entry(entity);
+            lock (obj)
+            {
+                m.SaveChanges();
+            }
+
+        }
+
+        /// <summary>
+        /// 获取实体
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public  T Get(object id)
+        {
+            return m.Set<T>().Find(id);
+        }
+
+        /// <summary>
+        /// 泛型获取列表
+        /// </summary>
+        /// <returns></returns>
+        public  DbSet<T> GetAll()
+        {
+            return m.Set<T>();
+        }
     }
 }
