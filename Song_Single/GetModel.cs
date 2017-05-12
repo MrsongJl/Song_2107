@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Song_Models;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Song_Models
+namespace Song_Single
 {
     /// <summary>
     /// 后期加入缓存使用
@@ -20,10 +21,10 @@ namespace Song_Models
                 return new Song_2017Entities();
             }
         }
-        /// <summary>
-        /// 存放缓存 todo: 暂未编写
-        /// </summary>
-        public static Song_2017Entities DBCache
+    /// <summary>
+    /// 存放缓存 todo: 暂未编写
+    /// </summary>
+     public static Song_2017Entities DBCache
         {
             get
             {

@@ -61,7 +61,6 @@
       <DependentUpon>SongEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Enum\EnumList.cs" />
-    <Compile Include="GetModel.cs" />
     <Compile Include="MenuPermission.cs">
       <DependentUpon>SongEntity.tt</DependentUpon>
     </Compile>
