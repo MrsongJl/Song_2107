@@ -13,7 +13,7 @@ namespace Song_Single
     /// 接口【请使用表名定义】  
     /// 为什么要使用接口  我们使用的数据 多数来源一同一张表 避免重复书写和修改 不便于维护 请使用接口
     /// </summary>
- public   interface ITest
+    public  interface ITest
     {
         /// <summary>
         /// 测试大数据缓存到redis中所使用的内存空间
