@@ -11,8 +11,10 @@ public class CookieHelper
     /// <param name="name">名称</param>  
     /// <param name="value">Cookie值</param>  
     /// <param name="response">HttpResponse</param>  
-    public static void Set(string name, string value, HttpResponse response)
+    public static void Set(string name, string value)
     {
+
+        HttpResponse response = HttpContext.Current.Response;
         HttpCookie cookie = new HttpCookie(name);
         cookie.Values.Add(name, value);
         response.AppendCookie(cookie);
@@ -27,8 +29,9 @@ public class CookieHelper
     /// <param name="value">Cookie值</param>  
     /// <param name="expiredays">过期时间</param>  
     /// <param name="response">HttpResponse</param>  
-    public static void Set(string name, string value, DateTime expiredays, HttpResponse response)
+    public static void Set(string name, string value, DateTime expiredays)
     {
+        HttpResponse response = HttpContext.Current.Response;
         HttpCookie cookie = new HttpCookie(name);
         cookie.Expires = expiredays;
         cookie.Values.Add(name, value);
@@ -43,8 +46,9 @@ public class CookieHelper
     /// <param name="name">名称</param>  
     /// <param name="request">HttpRequest</param>  
     /// <returns>Cookie的值</returns>  
-    public static string Get(string name, HttpRequest request)
+    public static string Get(string name)
     {
+        HttpRequest request = HttpContext.Current.Request;
         if (request.Cookies[name] != null)
         {
             return request.Cookies[name].Values[name];
@@ -63,8 +67,10 @@ public class CookieHelper
     /// <param name="name">名称</param>  
     /// <param name="response">HttpResponse</param>  
     /// <param name="request">HttpRequest</param>  
-    public static void Delete(string name, HttpResponse response, HttpRequest request)
+    public static void Delete(string name)
     {
+        HttpResponse response = HttpContext.Current.Response;
+        HttpRequest request = HttpContext.Current.Request;
         HttpCookie cookie = request.Cookies[name];
         if (cookie != null)
         {
@@ -82,8 +88,10 @@ public class CookieHelper
     /// <param name="value">Cookie值</param>  
     /// <param name="response">HttpResponse</param>  
     /// <param name="request">HttpRequest</param>  
-    public static void Modify(string name, string value, HttpResponse response, HttpRequest request)
+    public static void Modify(string name, string value)
     {
+        HttpResponse response = HttpContext.Current.Response;
+        HttpRequest request = HttpContext.Current.Request;
         HttpCookie cookie = request.Cookies[name];
         if (cookie != null)
         {
